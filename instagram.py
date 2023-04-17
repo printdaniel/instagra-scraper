@@ -10,10 +10,10 @@ import wget
 import getpass
 
 #  Instagram User data
-my_user = "sofia.punk_ph"
-target = "winna_z"
+my_user = "xxxxx"
+target = "xxxx"
 #my_pwd =  getpass.getpass()
-my_psw = "9silverstone8"
+my_psw = getpass.getpass()
 
 
 #  Opciones
