@@ -8,10 +8,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from time import sleep 
 import wget
 import getpass
+import os
 
 #  Instagram User data
-my_user = "xxxxx"
-target = "xxxx"
+my_user = "[your user]"
+target = "[target]"
 #my_pwd =  getpass.getpass()
 my_psw = getpass.getpass()
 
@@ -23,7 +24,11 @@ options.add_argument('--disable-extensions')
 options.add_experimental_option('detach', True)
 
 # Output dir 
-dest_loc = '/home/daniel/Escritorio/temp/sell/sell3/images/'
+current_dir = os.getcwd()
+dest_loc = current_dir + '/images/'
+
+if not os.path.exists(dest_loc):
+    os.makedirs(dest_loc)
 
 # Driver init
 # driver = webdriver.Chrome('/var/task/scraper/chromedriver/chromedriver', options=chrome_options)
