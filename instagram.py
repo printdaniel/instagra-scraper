@@ -11,8 +11,8 @@ import getpass
 import os
 
 #  Instagram User data
-my_user = "[your user]"
-target = "[target]"
+my_user = "sofia.punk_ph"
+target = "juliana.romero.75"
 #my_pwd =  getpass.getpass()
 my_psw = getpass.getpass()
 
@@ -70,7 +70,7 @@ WebDriverWait(driver, 12).until(
 #################
 WebDriverWait(driver, 12).until(
         EC.element_to_be_clickable((
-            By.XPATH, '//*[@id="loginForm"]/div/div[3]/button/div'
+            By.CLASS_NAME, '//*[@id="loginForm"]/div/div[3]/button/div'
             ))
         ).click()
 
