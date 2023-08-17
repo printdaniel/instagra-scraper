@@ -11,8 +11,8 @@ import getpass
 import os
 
 #  Instagram User data
-my_user = "ig_user"
-target = "juliana.romero.75"
+my_user = "[ig_user]"
+target = "[target]"
 #my_pwd =  getpass.getpass()
 my_psw = getpass.getpass()
 
