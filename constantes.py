@@ -1,6 +1,6 @@
 # Usuario
-USER = 'sofia.punk_ph'
-TARGET = 'octuc'
+USER = 'xxxx'
+TARGET = 'target'
 
 
 #################
