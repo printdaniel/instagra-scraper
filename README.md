@@ -15,7 +15,7 @@ Esta es una aplicación simple de scraping de Instagram que te permite descargar
 
 ## Uso
 
-1. Configura tus credenciales de Instagram en el archivo `config.py`:
+1. Configura tus credenciales de Instagram en el archivo `constantes.py`:
    
    ```python
    IG_USERNAME = 'tu nombre de usuario'
