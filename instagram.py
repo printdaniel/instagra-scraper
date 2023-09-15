@@ -78,7 +78,7 @@ WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
 logger.info("Inicio de sesión paso 2")
 
 WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
-    By.XPATH, INIT_SESSION ))).click()
+    By.CLASS_NAME, NOTIFICACIONES))).click()
 logger.info("Inicio de sesión paso 3")
 
 #####################
