@@ -75,25 +75,25 @@ logger.info("Inicio de sesión paso 1")
 
 WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
     By.CLASS_NAME, 'xa49m3k'))).click()
-logger.info("Inicio de sesión paso 2")
+logger.info("Inicio de sesión paso 2 -> Ahora no")
 
 WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
     By.CLASS_NAME, NOTIFICACIONES))).click()
-logger.info("Inicio de sesión paso 3")
+logger.info("Inicio de sesión paso 3 -> Ahora no 2")
 
 #####################
 # Search 
 #####################
 WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
         By.XPATH, SEARCH_1 ))).click()
-logger.info("Inicio de search paso 1")
+logger.info("Inicio de search paso 1 -> Click in search")
 
 WebDriverWait(driver, 20).until(EC.element_to_be_clickable((
         By.XPATH, SEARCH_2 ))).click()
-logger.info("Inicio de search paso 2")
+logger.info("Inicio de search paso 2 -> Click in box")
 
 busqueda = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((
-        By.XPATH, SEARCH_2 ))).send_keys(target)
+        By.CLASS_NAME, "x1lugfcp" ))).send_keys(target)
 logger.info("Inicio de search paso 3")
 
 #########################

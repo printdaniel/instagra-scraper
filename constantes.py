@@ -1,7 +1,6 @@
 # Usuario
-USER = 'your_user'
-TARGET = 'target'
-
+USER = ''
+TARGET = ""
 #################
 # User & Password
 #################
@@ -18,9 +17,8 @@ NOTIFICACIONES = "_a9--"
 #####################
 # Search 
 #####################
-SEARCH_1 = "/html/body/div[2]/div/div/div[2]/div/div/div/div[1]/div[1]/div[1]/div/div/div/div/div[2]/div[2]/span/div/a/div/div[1]/div/div"
-SEARCH_2 = "/html/body/div[2]/div/div/div[2]/div/div/div/div[1]/div[1]/div[1]/div/div/div[2]/div/div/div[2]/div/div/div[1]/div/div/input"
-
+SEARCH_1 = "/html/body/div[1]/div/div/div[2]/div/div/div/div[1]/div[1]/div[1]/div/div/div[1]/div/div[2]/div[2]/span/div/a/div/div/div/div"
+SEARCH_2 = "//*[@id='mount_0_0_qG']/div/div/div[2]/div/div/div/div[1]/div[1]/div[1]/div/div/div[2]/div/div/div[2]/div/div/div[1]/div/div/input"
 #################
 # Select
 #################
