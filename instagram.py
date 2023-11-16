@@ -89,18 +89,18 @@ WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
 logger.info("Inicio de search paso 1 -> Click in search")
 
 WebDriverWait(driver, 20).until(EC.element_to_be_clickable((
-        By.XPATH, SEARCH_2 ))).click()
+        By.CLASS_NAME, SEARCH_2 ))).click()
 logger.info("Inicio de search paso 2 -> Click in box")
 
 busqueda = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((
-        By.CLASS_NAME, "x1lugfcp" ))).send_keys(target)
-logger.info("Inicio de search paso 3")
+        By.CLASS_NAME, SEARCH_2 ))).send_keys(target)
+logger.info("Inicio de search paso 3 -> Select target")
 
 #########################
 # Seleccionar la búsqueda
 #########################
 WebDriverWait(driver, 20).until(EC.element_to_be_clickable((
-        By.XPATH, SELECT))).click()
+        By.XPATH, SEARCH_3))).click()
 
 #############################
 # Encontrar y recopilar links
