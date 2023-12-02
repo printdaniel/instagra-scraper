@@ -126,7 +126,7 @@ while True:
             continue
         my_images.add(source)
     
-    sleep(3)
+    sleep(5)
     
     # Verificar si se han cargado todas las imágenes
     if new_height == last_height:
@@ -141,10 +141,14 @@ print(len(my_images))
 ########################
 # Descargar las imágenes
 ########################
+count = 1
 for image in my_images:
     try:
         wget.download(image,dest_loc)
     except:
         continue
+
+    print(f"\n Imagen {count} de {len(my_images)}")
+    count += 1
 
 driver.quit()
