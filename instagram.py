@@ -100,7 +100,7 @@ logger.info("Inicio de search paso 3 -> objetivo ingresado")
 # Seleccionar la búsqueda
 #########################
 WebDriverWait(driver, 20).until(EC.element_to_be_clickable((
-        By.XPATH, SEARCH_3))).click()
+        By.XPATH, SELECT))).click()
 
 logger.info("Inicio de search paso 4 -> Click en objetivo")
 
@@ -126,7 +126,7 @@ while True:
             continue
         my_images.add(source)
     
-    sleep(5)
+    sleep(6)
     
     # Verificar si se han cargado todas las imágenes
     if new_height == last_height:
