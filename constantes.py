@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 USER = os.getenv('IGUSER')
-TARGET = 'lacolo.ro'
+TARGET = 'python3.py'
 #################
 # User & Password
 #################
