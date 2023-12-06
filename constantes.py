@@ -10,12 +10,6 @@ TARGET = 'python3.py'
 LOGIN_1 = "//*[@id='loginForm']/div/div[1]/div/label/input"
 LOGIN_2 = "//*[@id='loginForm']/div/div[2]/div/label/input"
 
-#################
-# Iniciar session
-#################
-INIT_SESSION_1 = "_acap"
-
-NOTIFICACIONES = "_a9--"
 #####################
 # Search 
 #####################

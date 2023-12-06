@@ -70,7 +70,7 @@ logger.info("User paso 4: password")
 # Iniciar session
 #################
 WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
-    By.CLASS_NAME, INIT_SESSION_1 ))).click()
+    By.CLASS_NAME, "_acap" ))).click()
 logger.info("Inicio de sesión paso 1")
 
 WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
@@ -78,7 +78,7 @@ WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
 logger.info("Inicio de sesión paso 2 -> Ahora no")
 
 WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
-    By.CLASS_NAME, NOTIFICACIONES))).click()
+    By.CLASS_NAME, "_a9--"))).click()
 logger.info("Inicio de sesión paso 3 -> Ahora no 2")
 
 #####################
