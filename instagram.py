@@ -55,7 +55,7 @@ logger.info("User paso 1")
 
 WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
             By.XPATH, LOGIN_1 ))).send_keys(my_user)
-logger.info("User paso 2")
+logger.info("User paso 2: user")
 
 WebDriverWait(driver, 12).until(
         EC.element_to_be_clickable((
@@ -64,13 +64,13 @@ logger.info("User paso 3")
 
 WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
         By.XPATH, LOGIN_2))).send_keys(my_psw)
-logger.info("User paso 4")
+logger.info("User paso 4: password")
 
 #################
 # Iniciar session
 #################
 WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
-    By.XPATH, INIT_SESSION_1 ))).click()
+    By.CLASS_NAME, INIT_SESSION_1 ))).click()
 logger.info("Inicio de sesión paso 1")
 
 WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
