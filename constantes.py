@@ -2,8 +2,8 @@
 from dotenv import load_dotenv
 import os
 load_dotenv()
-USER = os.getenv('IGUSER')
-TARGET = 'python3.py'
+USER = os.getenv('USERIG')
+TARGET = 'stoya'
 #################
 # User & Password
 #################
