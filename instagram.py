@@ -84,25 +84,9 @@ logger.info("Inicio de sesión paso 3 -> Ahora no (2)")
 #####################
 # Search 
 #####################
-WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
-        By.XPATH, SEARCH_1 ))).click()
-logger.info("Inicio de search paso 1 -> Click in search")
 
-WebDriverWait(driver, 20).until(EC.element_to_be_clickable((
-        By.CLASS_NAME, SEARCH_2 ))).click()
-logger.info("Inicio de search paso 2 -> Click in box")
-
-busqueda = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((
-        By.CLASS_NAME, SEARCH_2 ))).send_keys(target)
-logger.info("Inicio de search paso 3 -> objetivo ingresado")
-
-#########################
-# Seleccionar la búsqueda
-#########################
-WebDriverWait(driver, 20).until(EC.element_to_be_clickable((
-        By.XPATH, SELECT))).click()
-
-logger.info("Inicio de search paso 4 -> Click en objetivo")
+driver.get("https://instagram.com/" + TARGET+ "/")
+logger.info("user url listo")
 
 #############################
 # Encontrar y recopilar links
