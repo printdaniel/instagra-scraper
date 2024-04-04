@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 USER = os.getenv('USERIG')
-TARGET = 'jesicall'
+# TARGET = 'geoberdun._'
 #################
 # User & Password
 #################

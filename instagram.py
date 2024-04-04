@@ -20,7 +20,10 @@ logger = logging.getLogger(__name__)
 
 #  Instagram User data
 my_user = USER
-target = TARGET
+
+# Objetivo
+print("Recuerda que el el username debe ser exacto")
+target = input("Ingrese el username de la cuenta: ")
 #my_pwd =  getpass.getpass()
 my_psw = getpass.getpass()
 logger.info("Credenaciales cargadas")
@@ -85,7 +88,7 @@ logger.info("Inicio de sesión paso 3 -> Ahora no (2)")
 # Search 
 #####################
 
-driver.get("https://instagram.com/" + TARGET+ "/")
+driver.get("https://instagram.com/" + target + "/")
 logger.info("user url listo")
 
 #############################
