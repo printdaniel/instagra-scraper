@@ -4,19 +4,14 @@ Esta es una aplicación simple de scraping de Instagram que te permite descargar
 
 ## Requisitos
 
-- Python 3.x
+- Python 3.5 o versión superior
 - [Selenium](https://selenium-python.readthedocs.io/)
 - [wget](https://pypi.org/project/wget/)
 
 ## Instalación
 
 1. Clona este repositorio o descarga los archivos.
-2. Instala las bibliotecas requeridas ejecutando: `pip install selenium wget`
+2. Instala las bibliotecas requeridas ejecutando: `pip install -r requirements.txt`
+3. Agregar tu usuario de instagram a las variables de entorno
 
-## Uso
-
-1. Configura tus credenciales de Instagram en el archivo `constantes.py`:
-   
-   ```python
-   IG_USERNAME = 'tu nombre de usuario'
-   Target = 'cuenta de la que deseas descargar las imágenes'
+  
