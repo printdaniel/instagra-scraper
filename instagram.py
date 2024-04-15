@@ -1,12 +1,12 @@
 # Import statements
 import selenium
-from selenium import webdriver 
-from selenium.webdriver.common.by import By 
-from selenium.webdriver.common.keys import Keys 
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from constantes import *
-from time import sleep 
+from time import sleep
 import wget
 import getpass
 import os
@@ -24,7 +24,7 @@ my_user = USER
 # Objetivo
 print("Recuerda que el el username debe ser exacto")
 target = input("Ingrese el username de la cuenta: ")
-#my_pwd =  getpass.getpass()
+# Password de su cuenta Insagram.
 my_psw = getpass.getpass()
 logger.info("Credenaciales cargadas")
 
@@ -87,7 +87,6 @@ logger.info("Inicio de sesión paso 3 -> Ahora no (2)")
 #####################
 # Search 
 #####################
-
 driver.get("https://instagram.com/" + target + "/")
 logger.info("user url listo")
 
