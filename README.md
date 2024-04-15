@@ -13,5 +13,3 @@ Esta es una aplicación simple de scraping de Instagram que te permite descargar
 1. Clona este repositorio o descarga los archivos.
 2. Instala las bibliotecas requeridas ejecutando: `pip install -r requirements.txt`
 3. Agregar tu usuario de instagram a las variables de entorno
-
-  
