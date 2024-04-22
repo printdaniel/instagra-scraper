@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
-USER = os.getenv("USERIG") or int(input("Ingrese su cuenta de Instagram: "))
+USER = os.getenv("USERIG") or int(input("Ingrese su cuenta: "))
 #################
 # User & Password
 #################

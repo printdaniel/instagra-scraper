@@ -21,21 +21,21 @@ logger = logging.getLogger(__name__)
 #  Instagram User data
 my_user = USER
 
-# Objetivo
+# Objetivo, ingreso de cuenta que se desea descargar.
 print("Recuerda que el el username debe ser exacto")
 target = input("Ingrese el username de la cuenta: ")
 # Password de su cuenta Insagram.
 my_psw = getpass.getpass()
 logger.info("Credenaciales cargadas")
 
-#  Opciones
+#  Opciones de Selenium
 options = webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
 options.add_argument('--disable-extensions')
 options.add_experimental_option('detach', True)
 logger.info("Opciones [webdriver, maximized, detach]")
 
-# Output dir 
+# Output dir
 current_dir = os.getcwd()
 dest_loc = current_dir + '/images/'
 
@@ -85,7 +85,7 @@ WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
 logger.info("Inicio de sesión paso 3 -> Ahora no (2)")
 
 #####################
-# Search 
+# Search
 #####################
 driver.get("https://instagram.com/" + target + "/")
 logger.info("user url listo")
@@ -99,10 +99,10 @@ last_height = 0
 while True:
     # Obtener la altura actual de la página
     new_height = driver.execute_script("return document.body.scrollHeight")
-    
+
     # Scroll hacia abajo
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    
+
     # Encontrar y guardar los links
     images = driver.find_elements(By.CSS_SELECTOR,"._aagv img")
     for image in images:
@@ -111,14 +111,14 @@ while True:
         except:
             continue
         my_images.add(source)
-    
+
     sleep(6)
-    
+
     # Verificar si se han cargado todas las imágenes
     if new_height == last_height:
         print("Se han cargado todas las imágenes")
         break
-    
+
     # Actualizar la altura anterior
     last_height = new_height
 
