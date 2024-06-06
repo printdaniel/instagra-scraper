@@ -1,6 +1,8 @@
 # Instagram Scraping App
 
-Esta es una aplicación simple de scraping de Instagram que te permite descargar contenido de una cuenta objetivo. Utiliza las bibliotecas Selenium y wget para automatizar el proceso de descarga.
+Esta es una aplicación simple de scraping de Instagram que te permite descargar
+contenido de una cuenta objetivo. Utiliza las bibliotecas Selenium y wget para
+automatizar el proceso de descarga.
 
 ## Requisitos
 
