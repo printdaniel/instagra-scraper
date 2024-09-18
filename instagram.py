@@ -127,8 +127,17 @@ print("Cantidad de imágenes:")
 print(len(my_images))
 
 ########################
+# Cerrar googledrive
+########################
+
+
+driver.quit()
+
+########################
 # Descargar las imágenes
 ########################
+
+
 count = 1
 for image in my_images:
     try:
@@ -138,5 +147,3 @@ for image in my_images:
 
     print(f"\n Imagen {count} de {len(my_images)}")
     count += 1
-
-driver.quit()
