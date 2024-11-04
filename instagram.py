@@ -11,7 +11,6 @@ import getpass
 import os
 import logging
 # -----------------------------------------------------------------------------
-
 # Configuración básica del logger
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -129,14 +128,11 @@ print(len(my_images))
 ########################
 # Cerrar googledrive
 ########################
-
-
 driver.quit()
 
 ########################
 # Descargar las imágenes
 ########################
-
 
 count = 1
 for image in my_images:
