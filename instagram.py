@@ -80,10 +80,6 @@ WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
     By.CLASS_NAME, 'xa49m3k'))).click()
 logger.info("Inicio de sesión paso 2 -> Ahora no")
 
-WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
-    By.CLASS_NAME, "_a9--"))).click()
-logger.info("Inicio de sesión paso 3 -> Ahora no (2)")
-
 #####################
 # Search
 #####################
