@@ -117,10 +117,8 @@ while True:
 
     # Actualizar la altura anterior
     last_height = new_height
-print("+++++++++++++++++++++")
 print("Cantidad de imágenes:")
 print(len(my_images))
-print("+++++++++++++++++++++")
 
 ########################
 # Cerrar googledrive
