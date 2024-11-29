@@ -124,11 +124,11 @@ print(len(my_images))
 # Cerrar googledrive
 ########################
 driver.quit()
+logger.info("Webdriver cerrado")
 
 ########################
 # Descargar las imágenes
 ########################
-
 count = 1
 for image in my_images:
     try:
