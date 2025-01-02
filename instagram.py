@@ -119,6 +119,7 @@ while True:
     last_height = new_height
 print("Cantidad de imágenes:")
 print(len(my_images))
+print("******************")
 
 ########################
 # Cerrar googledrive
