@@ -7,8 +7,8 @@ USER = os.getenv("USERIG") or int(input("Ingrese su cuenta: "))
 #################
 # User & Password
 #################
-LOGIN_1 = "//*[@id='loginForm']/div/div[1]/div/label/input"
-LOGIN_2 = "//*[@id='loginForm']/div/div[2]/div/label/input"
+USERNAME_FIELD_XPATH = "//*[@id='loginForm']/div/div[1]/div/label/input"
+PASSWORD_FIELD_XPATH = "//*[@id='loginForm']/div/div[2]/div/label/input"
 
 #####################
 # Search

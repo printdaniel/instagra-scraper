@@ -53,20 +53,20 @@ logger.info("Chromium cargado")
 # User & Password
 #################
 WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
-            By.XPATH, LOGIN_1 ))).click()
+            By.XPATH, USERNAME_FIELD_XPATH ))).click()
 logger.info("User paso 1")
 
 WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
-            By.XPATH, LOGIN_1 ))).send_keys(my_user)
+            By.XPATH, USERNAME_FIELD_XPATH ))).send_keys(my_user)
 logger.info("User paso 2: user")
 
 WebDriverWait(driver, 12).until(
         EC.element_to_be_clickable((
-            By.XPATH, LOGIN_2 ))).click()
+            By.XPATH, PASSWORD_FIELD_XPATH ))).click()
 logger.info("User paso 3")
 
 WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
-        By.XPATH, LOGIN_2))).send_keys(my_psw)
+        By.XPATH, PASSWORD_FIELD_XPATH))).send_keys(my_psw)
 logger.info("User paso 4: password")
 
 #################
