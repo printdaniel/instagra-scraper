@@ -44,7 +44,6 @@ if not os.path.exists(dest_loc):
 logger.info("Directorio de imágenes creado")
 
 # Driver init
-# driver = webdriver.Chrome('/var/task/scraper/chromedriver/chromedriver', options=chrome_options)
 driver = webdriver.Chrome(options=options)
 driver.get("https://instagram.com/")
 logger.info("Chromium cargado")
@@ -53,35 +52,43 @@ logger.info("Chromium cargado")
 # User & Password
 #################
 
-login_1_element =  WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
-            By.XPATH, USERNAME_FIELD_XPATH )))
+# Parámetros
+TIMEOUT = 12
 
+def wait_and_click(driver, locator, log_message=""):
+    """ Espera a que un elemento sea clickeable y lo clickea """
+    try:
+        element = WebDriverWait(driver, TIMEOUT).until(EC.element_to_be_clickable(locator))
+        element.click()
+        logger.info(log_message)
+    except Exception as e:
+        logger.error(f"Error al hacer clic en {locator}: {str(e)}")
+        raise
 
-login_1_element.click()
-logger.info("User paso 1")
-login_1_element.send_keys(my_user)
-logger.info("User paso 2: user")
+def wait_and_send_keys(driver, locator, value, log_message=""):
+    """ Espera a que un elemento sea clickeable y envía texto """
+    try:
+        element = WebDriverWait(driver, TIMEOUT).until(EC.element_to_be_clickable(locator))
+        element.send_keys(value)
+        logger.info(log_message)
+    except Exception as e:
+        logger.error(f"Error al enviar texto en {locator}: {str(e)}")
+        raise
 
+# Ingresar usuario
+wait_and_click(driver, (By.XPATH, USERNAME_FIELD_XPATH), "User paso 1: Click en usuario")
+wait_and_send_keys(driver, (By.XPATH, USERNAME_FIELD_XPATH), my_user, "User paso 2: Usuario ingresado")
 
-WebDriverWait(driver, 12).until(
-        EC.element_to_be_clickable((
-            By.XPATH, PASSWORD_FIELD_XPATH ))).click()
-logger.info("User paso 3")
-
-WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
-        By.XPATH, PASSWORD_FIELD_XPATH))).send_keys(my_psw)
-logger.info("User paso 4: password")
+# Ingresar contraseña
+wait_and_click(driver, (By.XPATH, PASSWORD_FIELD_XPATH), "User paso 3: Click en contraseña")
+wait_and_send_keys(driver, (By.XPATH, PASSWORD_FIELD_XPATH), my_psw, "User paso 4: Contraseña ingresada")
 
 #################
-# Iniciar session
+# Iniciar sesión
 #################
-WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
-    By.CLASS_NAME, "_acap" ))).click()
-logger.info("Inicio de sesión paso 1")
+wait_and_click(driver, (By.CLASS_NAME, "_acap"), "Inicio de sesión paso 1: Click en botón de inicio de sesión")
+wait_and_click(driver, (By.CLASS_NAME, "xa49m3k"), "Inicio de sesión paso 2: Click en 'Ahora no'")
 
-WebDriverWait(driver, 12).until(EC.element_to_be_clickable((
-    By.CLASS_NAME, 'xa49m3k'))).click()
-logger.info("Inicio de sesión paso 2 -> Ahora no")
 
 #####################
 # Search
