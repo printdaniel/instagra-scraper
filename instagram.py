@@ -11,6 +11,7 @@ import wget
 import getpass
 import os
 import logging
+import urllib.error
 # -----------------------------------------------------------------------------
 # Configuración básica del logger
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -131,7 +132,6 @@ while True:
 
 print(f"Total de imágenes recolectadas: {len(my_images)}")
 
-
 ########################
 # Cerrar googledrive
 ########################
@@ -142,11 +142,15 @@ logger.info("Webdriver cerrado")
 # Descargar las imágenes
 ########################
 count = 1
-for image in my_images:
+for image_url in my_images:
     try:
-        wget.download(image,dest_loc)
-    except:
-        continue
-
-    print(f"\n Imagen {count} de {len(my_images)}")
-    count += 1
+        # Descargar la imagen
+        file_name = os.path.join(dest_loc, f"image_{count}.jpg")  # Nombre del archivo
+        wget.download(image_url, out=file_name)
+        print(f"\nImagen {count} de {len(my_images)} descargada: {file_name}")
+    except urllib.error.URLError as e:
+        print(f"\nError al descargar la imagen {count}: {e}")
+    except Exception as e:
+        print(f"\nError inesperado al descargar la imagen {count}: {e}")
+    finally:
+        count += 1
