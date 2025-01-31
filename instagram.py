@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from constantes import *
 from time import sleep
 import wget
@@ -127,9 +128,9 @@ while True:
 
     # Actualizar la altura anterior
     last_height = new_height
-print("Cantidad de imágenes:")
-print(len(my_images))
-print("******************")
+
+print(f"Total de imágenes recolectadas: {len(my_images)}")
+
 
 ########################
 # Cerrar googledrive
