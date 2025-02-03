@@ -4,7 +4,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from constantes import *
 from time import sleep
 import wget
@@ -24,13 +23,14 @@ logger = logging.getLogger(__name__)
 my_user = USER
 
 # Objetivo, ingreso de cuenta que se desea descargar.
-print("Recuerda que el el username debe ser exacto")
+print("Recuerda que el username debe ser exacto")
 target = input("Ingrese el username de la cuenta: ")
+
 # Password de su cuenta Insagram.
 my_psw = getpass.getpass()
 logger.info("Credenaciales cargadas")
 
-#  Opciones de Selenium
+# Selenium Options
 options = webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
 options.add_argument('--disable-extensions')
@@ -77,16 +77,16 @@ def wait_and_send_keys(driver, locator, value, log_message=""):
         logger.error(f"Error al enviar texto en {locator}: {str(e)}")
         raise
 
-# Ingresar usuario
+# Input user data
 wait_and_click(driver, (By.XPATH, USERNAME_FIELD_XPATH), "User paso 1: Click en usuario")
 wait_and_send_keys(driver, (By.XPATH, USERNAME_FIELD_XPATH), my_user, "User paso 2: Usuario ingresado")
 
-# Ingresar contraseña
+# Input Passoword field
 wait_and_click(driver, (By.XPATH, PASSWORD_FIELD_XPATH), "User paso 3: Click en contraseña")
 wait_and_send_keys(driver, (By.XPATH, PASSWORD_FIELD_XPATH), my_psw, "User paso 4: Contraseña ingresada")
 
 #################
-# Iniciar sesión
+# Sesion init
 #################
 wait_and_click(driver, (By.CLASS_NAME, "_acap"), "Inicio de sesión paso 1: Click en botón de inicio de sesión")
 wait_and_click(driver, (By.CLASS_NAME, "xa49m3k"), "Inicio de sesión paso 2: Click en 'Ahora no'")
@@ -133,13 +133,13 @@ while True:
 print(f"Total de imágenes recolectadas: {len(my_images)}")
 
 ########################
-# Cerrar googledrive
+# Close googledrive
 ########################
 driver.quit()
 logger.info("Webdriver cerrado")
 
 ########################
-# Descargar las imágenes
+# Download images
 ########################
 count = 1
 for image_url in my_images:
