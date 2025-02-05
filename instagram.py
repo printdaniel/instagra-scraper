@@ -30,6 +30,7 @@ target = input("Ingrese el username de la cuenta: ")
 my_psw = getpass.getpass()
 logger.info("Credenaciales cargadas")
 
+# -----------------------------------------------------------------------------
 # Selenium Options
 options = webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
@@ -37,6 +38,7 @@ options.add_argument('--disable-extensions')
 options.add_experimental_option('detach', True)
 logger.info("Opciones [webdriver, maximized, detach]")
 
+# -----------------------------------------------------------------------------
 # Output dir
 current_dir = os.getcwd()
 dest_loc = current_dir + '/images/'
