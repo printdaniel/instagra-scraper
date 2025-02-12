@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 my_user = USER
 
 # Objetivo, ingreso de cuenta que se desea descargar.
-print("Recuerda que el username debe ser exacto")
+print("Target Username")
 target = input("Ingrese el username de la cuenta: ")
 
 # Password de su cuenta Insagram.
@@ -48,16 +48,14 @@ if not os.path.exists(dest_loc):
     os.makedirs(dest_loc)
 logger.info("Directorio de imágenes creado")
 
+# -----------------------------------------------------------------------------
 # Driver init
 driver = webdriver.Chrome(options=options)
 driver.get("https://instagram.com/")
 logger.info("Chromium cargado")
 
-#################
+# -----------------------------------------------------------------------------
 # User & Password
-#################
-# Parámetros
-TIMEOUT = 12
 
 def wait_and_click(driver, locator, log_message=""):
     """ Espera a que un elemento sea clickeable y lo clickea """
@@ -79,6 +77,7 @@ def wait_and_send_keys(driver, locator, value, log_message=""):
         logger.error(f"Error al enviar texto en {locator}: {str(e)}")
         raise
 
+# -----------------------------------------------------------------------------
 # Input user data
 wait_and_click(driver, (By.XPATH, USERNAME_FIELD_XPATH), "User paso 1: Click en usuario")
 wait_and_send_keys(driver, (By.XPATH, USERNAME_FIELD_XPATH), my_user, "User paso 2: Usuario ingresado")
@@ -87,28 +86,26 @@ wait_and_send_keys(driver, (By.XPATH, USERNAME_FIELD_XPATH), my_user, "User paso
 wait_and_click(driver, (By.XPATH, PASSWORD_FIELD_XPATH), "User paso 3: Click en contraseña")
 wait_and_send_keys(driver, (By.XPATH, PASSWORD_FIELD_XPATH), my_psw, "User paso 4: Contraseña ingresada")
 
-#################
 # Sesion init
-#################
 wait_and_click(driver, (By.CLASS_NAME, "_acap"), "Inicio de sesión paso 1: Click en botón de inicio de sesión")
 #wait_and_click(driver, (By.CLASS_NAME, "xlyipyv"), "Click en Now No")
 #wait_and_click(driver, (By.XPATH, NOW_NO_XPATH), "Inicio de sesión paso 2: Click en 'Ahora no'")
 #wait_and_click(driver, (By.XPATH, "x10wlt62"), "Inicio de sesión paso 2: Click en 'Ahora no'")
 #wait_and_click(driver, (By.CLASS_NAME, "x6s0dn4"), "Now No")
 
-sleep(5)
-#####################
+#wait_and_click(driver, (By.XPATH, NOW_NO_XPATH), "Inicio de sesión paso 2: Click en 'Ahora no'")
+
+# -----------------------------------------------------------------------------
 # Search
-#####################
 driver.get("https://instagram.com/" + target + "/")
 logger.info("user url listo")
 
-#############################
+# -----------------------------------------------------------------------------
 # Encontrar y recopilar links
-#############################
 my_images = set()
 last_height = 0
 
+# -----------------------------------------------------------------------------
 while True:
     # Obtener la altura actual de la página
     new_height = driver.execute_script("return document.body.scrollHeight")
@@ -137,15 +134,13 @@ while True:
 
 print(f"Total de imágenes recolectadas: {len(my_images)}")
 
-########################
+# -----------------------------------------------------------------------------
 # Close googledrive
-########################
 driver.quit()
 logger.info("Webdriver cerrado")
 
-########################
+# -----------------------------------------------------------------------------
 # Download images
-########################
 count = 1
 for image_url in my_images:
     try:
