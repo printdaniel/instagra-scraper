@@ -21,3 +21,5 @@ SEARCH_2 = "x19g9edo"
 # Select
 #################
 SELECT = "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[1]/div[1]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/a[1]/div[1]/div/div/div[2]/div/div/span/span"
+
+NOW_NO_XPATH ="/html/body/div[5]/div[1]/div/div[2]/div/div/div/div/div/div/div[1]/div[3]/div[2]/svg/path"

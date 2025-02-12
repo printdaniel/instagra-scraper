@@ -11,11 +11,12 @@ import getpass
 import os
 import logging
 import urllib.error
+
 # -----------------------------------------------------------------------------
 # Configuración básica del logger
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Crear un objeto logger
+# Objeto logger
 logger = logging.getLogger(__name__)
 
 # -----------------------------------------------------------------------------
@@ -55,7 +56,6 @@ logger.info("Chromium cargado")
 #################
 # User & Password
 #################
-
 # Parámetros
 TIMEOUT = 12
 
@@ -91,9 +91,12 @@ wait_and_send_keys(driver, (By.XPATH, PASSWORD_FIELD_XPATH), my_psw, "User paso 
 # Sesion init
 #################
 wait_and_click(driver, (By.CLASS_NAME, "_acap"), "Inicio de sesión paso 1: Click en botón de inicio de sesión")
-wait_and_click(driver, (By.CLASS_NAME, "xa49m3k"), "Inicio de sesión paso 2: Click en 'Ahora no'")
+#wait_and_click(driver, (By.CLASS_NAME, "xlyipyv"), "Click en Now No")
+#wait_and_click(driver, (By.XPATH, NOW_NO_XPATH), "Inicio de sesión paso 2: Click en 'Ahora no'")
+#wait_and_click(driver, (By.XPATH, "x10wlt62"), "Inicio de sesión paso 2: Click en 'Ahora no'")
+#wait_and_click(driver, (By.CLASS_NAME, "x6s0dn4"), "Now No")
 
-
+sleep(5)
 #####################
 # Search
 #####################
