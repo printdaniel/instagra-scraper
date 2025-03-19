@@ -33,3 +33,8 @@ automate the downloading process.
 ## Update 2024
 1. "Not now" Eliminado
 2. Modulos
+
+
+## Update 2025
+1. Delay init
+2. Modulos
